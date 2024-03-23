@@ -13,12 +13,35 @@ const questions = [
         type:"input",
         message:"What is the description?",
         name: "description",
-    }
+    },
+    {
+        type:"input",
+        message: "Installation instructions?",
+        name: "installation",
+    },
+    {
+        type:"list",
+        message: "What is the license you want to use?",
+        name: "license",
+        choices: ["MIT","None"]
+    },
+    {
+        type:"input",
+        message: "How does one use the project?",
+        name: "use",
+    },
+    {
+        type:"credits",
+        message: "What credits would you like to include?",
+        name: "credits",
+    },
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, function(err){
+    const markdown = generateMarkdown(data)
+    console.log (markdown)
+    fs.writeFile(fileName, markdown, function(err){
         if(err) throw err
         console.log ("file written")
     })
