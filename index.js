@@ -31,10 +31,20 @@ const questions = [
         name: "use",
     },
     {
-        type:"credits",
+        type:"input",
         message: "What credits would you like to include?",
         name: "credits",
     },
+    {
+        type:"input",
+        message: "How to contribute to the project?",
+        name: "contribute",
+    },
+    {
+        type:"input",
+        message: "Any tests you would like to include? Code examples?",
+        name: "tests",
+    }
 ];
 
 // TODO: Create a function to write README file
